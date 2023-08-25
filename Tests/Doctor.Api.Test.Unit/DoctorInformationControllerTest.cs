@@ -105,24 +105,6 @@ public class DoctorInformationControllerTest
 
 
     [Fact]
-    public async Task Edit_Should_Return_ApiResult()
-    {
-        // Arrange
-        
-        var controller = new DoctorInformationController(facadeMock);
-
-        var command = new Edit_DoctorInfo_Command(1, "John Doe", Arg.Any<IFormFile>(), "12345", "john@example.com", "Short desc", "Description");
-
-        var operationResult = OperationResult.Success();
-        facadeMock.Edit(command).Returns(operationResult);
-
-        // Act
-        var result = await controller.Edit(command);
-
-        // Assert
-        result.Should().BeOfType<ApiResult>();
-    }
-    [Fact]
     public async Task Create_Should_Return_ApiResult()
     {
         // Arrange
@@ -139,14 +121,32 @@ public class DoctorInformationControllerTest
         // Assert
         result.Should().BeOfType<ApiResult>();
     }
+
+    [Fact]
+    public async Task Edit_Should_Return_ApiResult()
+    {
+        // Arrange
+        var controller = new DoctorInformationController(facadeMock);
+
+        var command = new Edit_DoctorInfo_Command(1, "John Doe", formFile, "12345", "john@example.com", "Short desc", "Description");
+
+        var operationResult = OperationResult.Success();
+        facadeMock.Edit(command).Returns(operationResult);
+
+        // Act
+        var result = await controller.Edit(command);
+
+        // Assert
+        result.Should().BeOfType<ApiResult>();
+    }
+
     [Fact]
     public async Task Edit_Should_Return_CommandResult()
     {
         // Arrange
-        
         var controller = new DoctorInformationController(facadeMock);
 
-        var command = new Edit_DoctorInfo_Command(1, "John Doe", Arg.Any<IFormFile>(), "12345", "john@example.com", "Short desc", "Description");
+        var command = new Edit_DoctorInfo_Command(1, "John Doe", formFile, "12345", "john@example.com", "Short desc", "Description");
 
         var operationResult = OperationResult.Success();
         facadeMock.Edit(command).Returns(operationResult);
@@ -157,7 +157,6 @@ public class DoctorInformationControllerTest
         // Assert
         result.MetaData.AppStatusCode.Should().Be(AppStatusCode.Success);
     }
-
     [Fact]
     public async Task Delete_Should_Return_ApiResult()
     {
