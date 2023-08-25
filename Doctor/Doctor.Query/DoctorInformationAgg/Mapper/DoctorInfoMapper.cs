@@ -10,7 +10,7 @@ public static class DoctorInfoMapper
     public static DoctorInformationDto Map(this DoctorInformation? doctorInfo)
     {
         if (doctorInfo == null)
-            return null;
+            return new DoctorInformationDto();
         return new DoctorInformationDto()
         {
             FullName = doctorInfo.FullName,
@@ -22,8 +22,10 @@ public static class DoctorInfoMapper
         };
 
     }
-    public static List<DoctorInformationDto> Map(this List<DoctorInformation> doctorInfos)
+    public static List<DoctorInformationDto> Map(this List<DoctorInformation>? doctorInfos)
     {
+        if(doctorInfos==null)
+            return new List<DoctorInformationDto>();
         var model = new List<DoctorInformationDto>();
         doctorInfos.ForEach(doctorInfo =>
         {

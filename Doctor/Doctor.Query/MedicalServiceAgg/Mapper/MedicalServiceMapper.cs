@@ -7,7 +7,7 @@ public static class MedicalServiceMapper
     public static MedicalServiceDto Map(this MedicalService? medicalService)
     {
         if (medicalService == null)
-            return null;
+            return new MedicalServiceDto();
         return new MedicalServiceDto()
         {
             Title=medicalService.Title,
@@ -18,6 +18,8 @@ public static class MedicalServiceMapper
     }
     public static List<MedicalServiceDto> Map(this List<MedicalService> medicalServices)
     {
+        if (medicalServices == null)
+            return new List<MedicalServiceDto>();
         var model = new List<MedicalServiceDto>();
         medicalServices.ForEach(x => {
             model.Add(new MedicalServiceDto() { Title=x.Title,ShortDescription=x.ShortDescription,Image=x.Image});

@@ -31,8 +31,4 @@
     <ProjectReference Include="..\..\Doctor\Doctor.Infrastructure\Doctor.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DoctorInformationAgg\Remove\" />
-  </ItemGroup>
-
 </Project>

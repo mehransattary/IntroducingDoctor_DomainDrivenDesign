@@ -52,7 +52,7 @@ public class Edit_DoctorInfo_Command_Handler_Test
         mockRepository.GetTracking(Arg.Any<long>()).Returns(doctorinfo);
 
         mockFileService.SaveFileAndGenerateName(Arg.Any<IFormFile>(), Arg.Any<string>()).Returns("new_image.jpg");
-
+        mockRepository.DeleteDoctorInfo(Arg.Any<long>()).Returns(true);
         var handler = new Edit_DoctorInfo_Command_Handler(mockRepository, mockFileService);
         var command = new Edit_DoctorInfo_Command(1, "nameTest", imageFile, "", "", "", "");
 

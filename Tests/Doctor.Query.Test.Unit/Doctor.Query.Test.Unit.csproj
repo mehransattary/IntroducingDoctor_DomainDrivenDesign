@@ -29,4 +29,8 @@
     <ProjectReference Include="..\..\Doctor\Doctor.Query\Doctor.Query.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DoctorInformationAgg\GetById\" />
+  </ItemGroup>
+
 </Project>
