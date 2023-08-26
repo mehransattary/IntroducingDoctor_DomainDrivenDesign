@@ -12,6 +12,8 @@ using Common.Application.FileUtil.Interfaces;
 using Common.Application.FileUtil.Services;
 using Doctor.Domain.DoctorInformationAgg.Services;
 using Doctor.Application.DoctorInformationAgg.Service;
+using Doctor.Domain.AboutUsAgg.Services;
+using Doctor.Application.AboutUsAgg.Service;
 
 namespace Doctor.Config;
 
@@ -27,7 +29,7 @@ public static class DoctorBootstrapper
 
         services.AddTransient<IMedicalServicesDomianService, MedicalServicesDomianService>();
         services.AddTransient<IDoctorInformationDomianService, DoctorInformationDomianService>();
-
+        services.AddTransient<IAboutDomainService, AboutDomainService>();
         services.AddValidatorsFromAssembly(typeof(Create_MedicalService_Command_Validator).Assembly);
         services.InitFacadeDependency();
 

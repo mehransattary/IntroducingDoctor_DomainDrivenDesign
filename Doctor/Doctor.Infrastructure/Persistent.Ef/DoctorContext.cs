@@ -1,5 +1,6 @@
 ﻿
 
+using Doctor.Domain.AboutUsAgg;
 using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Domain.MedicalServicesAgg;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +16,9 @@ public class DoctorContext : DbContext
     }
     public DbSet<MedicalService> MedicalServices { get; set; }
     public DbSet<DoctorInformation> DoctorInformations { get; set; }
+    public DbSet<AboutUs> AboutUs { get; set; }
 
+    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);

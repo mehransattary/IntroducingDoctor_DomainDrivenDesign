@@ -1,5 +1,6 @@
 ﻿
 
+using Doctor.Presentation.Facade.AboutUsAgg;
 using Doctor.Presentation.Facade.DoctorInformationAgg;
 using Doctor.Presentation.Facade.MedicalServiceAgg;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,7 @@ public static class FacadeBootstrapper
     {
         services.AddScoped<IMedicalServiceFacade, MedicalServiceFacade>();
         services.AddScoped<IDoctorInformationFacade, DoctorInformationFacade>();
+        services.AddScoped<IAboutUsFacade, AboutUsFacade>();
 
     }
 }
