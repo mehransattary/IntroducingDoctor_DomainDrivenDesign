@@ -17,12 +17,12 @@ public class AboutUsFacade : IAboutUsFacade
     {
         _mediator = mediator;
     }
-    public async Task<OperationResult> Create(Create_AboutUs_Command command)
+    public async Task<OperationResult> Create(Create_ContactUs_Command command)
     {
         return await _mediator.Send(command);
     }
 
-    public async Task<OperationResult> Edit(Edit_Aboutus_Command command)
+    public async Task<OperationResult> Edit(Edit_ContactUs_Command command)
     {
         return await _mediator.Send(command);
     }

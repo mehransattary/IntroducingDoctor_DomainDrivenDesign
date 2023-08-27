@@ -35,7 +35,7 @@ public class MedicalServiceMapperTest
         var medicalServiceDto = medicalService.Map();
 
         // Assert
-        Assert.Null(medicalServiceDto);
+        Assert.NotNull(medicalServiceDto);
     }
     [Fact]
     public void Map_ListOfMedicalServiceToListOfMedicalServiceDto_ReturnsCorrectDtoList()

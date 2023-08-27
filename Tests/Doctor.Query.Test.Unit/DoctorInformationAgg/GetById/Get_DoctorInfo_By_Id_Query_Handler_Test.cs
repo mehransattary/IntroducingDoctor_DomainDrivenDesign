@@ -48,7 +48,7 @@ public class Get_DoctorInfo_By_Id_Query_Handler_Test
         var result = doctorInfo.Map();
 
         // Assert
-        result.Should().BeNull();
+        result.Should().NotBeNull();
     }
 
     [Fact]

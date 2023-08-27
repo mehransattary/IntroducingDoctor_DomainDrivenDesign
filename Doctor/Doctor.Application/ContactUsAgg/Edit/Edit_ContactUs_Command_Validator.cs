@@ -2,11 +2,11 @@
 using Common.Application.Validation.FluentValidations;
 using FluentValidation;
 
-namespace Doctor.Application.AboutUsAgg.Create;
+namespace Doctor.Application.ContactUsAgg.Edit;
 
-public class Create_ContactUs_Command_Validator:AbstractValidator<Create_ContactUs_Command>
+public class Edit_ContactUs_Command_Validator: AbstractValidator<Edit_ContactUs_Command>
 {
-    public Create_ContactUs_Command_Validator()
+    public Edit_ContactUs_Command_Validator()
     {
         RuleFor(x => x.Title).NotNull().NotEmpty().WithMessage(ValidationMessages.required("Title"));
 

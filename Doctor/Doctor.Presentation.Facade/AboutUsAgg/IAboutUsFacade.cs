@@ -12,8 +12,8 @@ namespace Doctor.Presentation.Facade.AboutUsAgg;
 
 public interface IAboutUsFacade
 {
-    Task<OperationResult> Create(Create_AboutUs_Command command);
-    Task<OperationResult> Edit(Edit_Aboutus_Command command);
+    Task<OperationResult> Create(Create_ContactUs_Command command);
+    Task<OperationResult> Edit(Edit_ContactUs_Command command);
     Task<OperationResult> Remove(long Id);
 
 

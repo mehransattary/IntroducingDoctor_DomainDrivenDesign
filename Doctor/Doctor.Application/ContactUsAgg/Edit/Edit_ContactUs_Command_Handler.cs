@@ -6,7 +6,7 @@ using Doctor.Application._Utilities;
 using Doctor.Domain.AboutUsAgg.Repository;
 using Microsoft.AspNetCore.Http;
 
-namespace Doctor.Application.AboutUsAgg.Edit;
+namespace Doctor.Application.ContactUsAgg.Edit;
 
 public class Edit_ContactUs_Command_Handler : IBaseCommandHandler<Edit_ContactUs_Command>
 {

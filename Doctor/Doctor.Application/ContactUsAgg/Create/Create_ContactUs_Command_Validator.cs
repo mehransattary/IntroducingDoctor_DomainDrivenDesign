@@ -2,7 +2,7 @@
 using Common.Application.Validation.FluentValidations;
 using FluentValidation;
 
-namespace Doctor.Application.AboutUsAgg.Create;
+namespace Doctor.Application.ContactUsAgg.Create;
 
 public class Create_ContactUs_Command_Validator:AbstractValidator<Create_ContactUs_Command>
 {

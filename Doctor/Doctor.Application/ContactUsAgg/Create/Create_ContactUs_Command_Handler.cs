@@ -5,17 +5,19 @@ using Common.Application.FileUtil.Interfaces;
 using Doctor.Application._Utilities;
 using Doctor.Domain.AboutUsAgg;
 using Doctor.Domain.AboutUsAgg.Repository;
+using Doctor.Domain.ContactUsAgg;
+using Doctor.Domain.ContactUsAgg.Repository;
 using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Domain.DoctorInformationAgg.Repository;
 
-namespace Doctor.Application.AboutUsAgg.Create;
+namespace Doctor.Application.ContactUsAgg.Create;
 
 public class Create_ContactUs_Command_Handler : IBaseCommandHandler<Create_ContactUs_Command>
 {
-    private readonly IAboutUsRepository _repository;
+    private readonly IContactUsRepository _repository;
     private readonly IFileService _fileService;
 
-    public Create_ContactUs_Command_Handler(IAboutUsRepository repository, IFileService fileService)
+    public Create_ContactUs_Command_Handler(IContactUsRepository repository, IFileService fileService)
     {
         _repository = repository;
         _fileService = fileService;
@@ -23,7 +25,7 @@ public class Create_ContactUs_Command_Handler : IBaseCommandHandler<Create_Conta
     }
     public async Task<OperationResult> Handle(Create_ContactUs_Command request, CancellationToken cancellationToken)
     {
-        if( await _repository.IsExist_AboutUs())
+        if( await _repository.IsExist_ContactUs())
             return OperationResult.Error("is exist aboutus in databasae");
 
         if (request.ImageFile == null)
@@ -31,9 +33,9 @@ public class Create_ContactUs_Command_Handler : IBaseCommandHandler<Create_Conta
 
         var imagename = await _fileService.SaveFileAndGenerateName(request.ImageFile, Directories.AboutImages);
 
-        var about = new AboutUs(request.Title, imagename, request.Description);
+        var contactUs = new ContactUs(request.Title, imagename, request.Description);
 
-        _repository.Add(about);
+        _repository.Add(contactUs);
         await _repository.Save();
 
         return OperationResult.Success();
