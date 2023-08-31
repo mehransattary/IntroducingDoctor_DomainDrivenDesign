@@ -4,6 +4,7 @@ using Common.AspNetCore;
 using Doctor.Api.Controllers;
 using Doctor.Application.DoctorInformationAgg.Create;
 using Doctor.Application.DoctorInformationAgg.Edit;
+using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Presentation.Facade.DoctorInformationAgg;
 using Doctor.Query.DoctorInformationAgg.DTOs;
 using FluentAssertions;
@@ -111,7 +112,7 @@ public class DoctorInformationControllerTest
         
         var controller = new DoctorInformationController(facadeMock);
       
-        var command = new Create_DoctorInfo_Command("John Doe", formFile,"","","","");
+        var command = new Create_DoctorInfo_Command("John Doe", formFile,"","","","", new List<Specialization>());
 
         facadeMock.Create(command).Returns(OperationResult.Success());
 

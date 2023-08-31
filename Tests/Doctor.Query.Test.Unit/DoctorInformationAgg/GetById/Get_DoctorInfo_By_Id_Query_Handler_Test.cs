@@ -2,6 +2,7 @@
 
 using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Domain.DoctorInformationAgg.Repository;
+using Doctor.Domain.DoctorInformationAgg.Services;
 using Doctor.Query.DoctorInformationAgg.DTOs;
 using Doctor.Query.DoctorInformationAgg.GetById;
 using Doctor.Query.DoctorInformationAgg.Mapper;
@@ -16,7 +17,7 @@ public class Get_DoctorInfo_By_Id_Query_Handler_Test
     public async Task Handle_Should_Return_DoctorInformationDto()
     {
         // Arrange
-        var doctorInfoRepositoryMock = Substitute.For<IDoctorInformationRepository>();
+        var doctorInfoRepositoryMock = Substitute.For<IDoctorInformationDomianService>();
         var queryHandler = new Get_DoctorInfo_By_Id_Query_Handler(doctorInfoRepositoryMock);
 
         var query = new Get_DoctorInfo_By_Id_Query(1);

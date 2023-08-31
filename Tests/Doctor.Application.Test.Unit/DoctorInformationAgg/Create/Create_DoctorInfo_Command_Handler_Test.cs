@@ -4,6 +4,7 @@ using Common.Application;
 using Common.Application.FileUtil.Interfaces;
 using Doctor.Application.DoctorInformationAgg.Create;
 using Doctor.Application.MedicalServiceAgg.Create;
+using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Domain.DoctorInformationAgg.Repository;
 using Doctor.Domain.MedicalServicesAgg.Repository;
 using FluentAssertions;
@@ -31,7 +32,7 @@ public class Create_DoctorInfo_Command_Handler_Test
     {
 
         // Arrange
-        var command = new Create_DoctorInfo_Command("nameTest",null,"","","","");
+        var command = new Create_DoctorInfo_Command("nameTest",null,"","","","",new List<Specialization>());
         var handler = new Create_DoctorInfo_Command_Handler(mockRepository, mockFileService);
 
         // Act
@@ -45,7 +46,7 @@ public class Create_DoctorInfo_Command_Handler_Test
     {
         mockFileService.SaveFileAndGenerateName(Arg.Any<IFormFile>(), Arg.Any<string>()).Returns("new_image.jpg");
         // Arrange
-        var command = new Create_DoctorInfo_Command("nameTest", imageFile, "", "", "", "");
+        var command = new Create_DoctorInfo_Command("nameTest", imageFile, "", "", "", "", new List<Specialization>());
         var handler = new Create_DoctorInfo_Command_Handler(mockRepository, mockFileService);
 
         // Act

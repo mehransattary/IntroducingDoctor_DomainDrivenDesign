@@ -2,6 +2,7 @@
 
 using Doctor.Domain.MedicalServicesAgg;
 using Doctor.Domain.MedicalServicesAgg.Repository;
+using Doctor.Domain.MedicalServicesAgg.Services;
 using Doctor.Query.MedicalServiceAgg.DTOs;
 using Doctor.Query.MedicalServiceAgg.GetById;
 using Doctor.Query.MedicalServiceAgg.GetList;
@@ -15,7 +16,7 @@ public class GetList_MedicalService_Query_Handler_Test
     public async Task Handle_ReturnsListOfMedicalServiceDto()
     {
         // Arrange
-        var medicalServiceRepositoryMock = new Mock<IMedicalServiceRepository>();
+        var medicalServiceRepositoryMock = new Mock<IMedicalServicesDomianService>();
         var nedicalServices = new List<MedicalService>
         {
            new  MedicalService("Title1", "Description1", "image1.jpg"),

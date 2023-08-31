@@ -2,6 +2,7 @@
 
 using Doctor.Domain.MedicalServicesAgg;
 using Doctor.Domain.MedicalServicesAgg.Repository;
+using Doctor.Domain.MedicalServicesAgg.Services;
 using Doctor.Infrastructure.Persistent.Ef;
 using Doctor.Query.MedicalServiceAgg.DTOs;
 using Doctor.Query.MedicalServiceAgg.GetById;
@@ -19,7 +20,7 @@ public class Get_MedicalService_By_Id_Query_Handler_Test
     [Fact]
     public async Task Handle_ValidId_ReturnsMedicalServiceDto()
     {
-        var medicalServiceRepositoryMock = new Mock<IMedicalServiceRepository>();
+        var medicalServiceRepositoryMock = new Mock<IMedicalServicesDomianService>();
 
         // Arrange
         var medicalService = new MedicalService("Title1", "Description1", "image1.jpg");

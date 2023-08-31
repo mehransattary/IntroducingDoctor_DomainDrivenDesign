@@ -8,18 +8,18 @@ using Microsoft.AspNetCore.Http;
 
 namespace Doctor.Application.AboutUsAgg.Edit;
 
-public class Edit_ContactUs_Command_Handler : IBaseCommandHandler<Edit_ContactUs_Command>
+public class Edit_AboutUs_Command_Handler : IBaseCommandHandler<Edit_AboutUs_Command>
 {
     private readonly IAboutUsRepository _repository;
     private readonly IFileService _fileService;
 
-    public Edit_ContactUs_Command_Handler(IAboutUsRepository repository, IFileService fileService)
+    public Edit_AboutUs_Command_Handler(IAboutUsRepository repository, IFileService fileService)
     {
         _repository = repository;
         _fileService = fileService;
 
     }
-    public async Task<OperationResult> Handle(Edit_ContactUs_Command request, CancellationToken cancellationToken)
+    public async Task<OperationResult> Handle(Edit_AboutUs_Command request, CancellationToken cancellationToken)
     {
         var about = await _repository.GetTracking(request.Id);
         if (about == null)

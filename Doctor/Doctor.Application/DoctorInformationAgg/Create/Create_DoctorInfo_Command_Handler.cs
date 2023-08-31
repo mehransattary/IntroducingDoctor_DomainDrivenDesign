@@ -22,14 +22,17 @@ public class Create_DoctorInfo_Command_Handler : IBaseCommandHandler<Create_Doct
 
     public async Task<OperationResult> Handle(Create_DoctorInfo_Command request, CancellationToken cancellationToken)
     {
-        if (request.fileImage == null)
+        if (request.FileImage == null)
             return OperationResult.Error();
 
-        var imagename = await _fileService.SaveFileAndGenerateName(request.fileImage, Directories.DoctorInfoImages);
+        var imagename = await _fileService.SaveFileAndGenerateName(request.FileImage, Directories.DoctorInfoImages);
 
-        var docInfo = new DoctorInformation(request.fullName, imagename, request.medicalLicenseNumber,request.email,request.shortdesc,request.desc);
-
+        var docInfo = new DoctorInformation(request.FullName, imagename, request.MedicalLicenseNumber,request.Email,request.Shortdesc,request.Desc);
+       
         _repository.Add(docInfo);
+
+        docInfo.SetSpecialization(request.Specializations) ;       
+
         await _repository.Save();
 
         return OperationResult.Success();   

@@ -1,12 +1,9 @@
 ﻿
 
 using Common.Application;
-using Doctor.Application.AboutUsAgg.Create;
-using Doctor.Application.AboutUsAgg.Edit;
-using Doctor.Application.DoctorInformationAgg.Create;
-using Doctor.Application.DoctorInformationAgg.Edit;
+using Doctor.Application.ContactUsAgg.Create;
+using Doctor.Application.ContactUsAgg.Edit;
 using Doctor.Query.AboutUsAgg.DTOs;
-using Doctor.Query.DoctorInformationAgg.DTOs;
 
 namespace Doctor.Presentation.Facade.AboutUsAgg;
 

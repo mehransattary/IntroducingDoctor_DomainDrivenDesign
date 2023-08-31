@@ -1,8 +1,9 @@
 ﻿using Common.Application;
 using Common.AspNetCore;
 using Doctor.Api.Controllers;
-using Doctor.Application.AboutUsAgg.Create;
-using Doctor.Application.AboutUsAgg.Edit;
+
+using Doctor.Application.ContactUsAgg.Create;
+using Doctor.Application.ContactUsAgg.Edit;
 using Doctor.Presentation.Facade.AboutUsAgg;
 using Doctor.Query.AboutUsAgg.DTOs;
 using FluentAssertions;

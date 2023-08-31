@@ -3,6 +3,7 @@
 using Common.Application.FileUtil.Interfaces;
 using Doctor.Application.DoctorInformationAgg.Create;
 using Doctor.Application.MedicalServiceAgg.Create;
+using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Domain.DoctorInformationAgg.Repository;
 using FluentAssertions;
 using FluentValidation.TestHelper;
@@ -31,13 +32,13 @@ public class Create_DoctorInfo_Command_Validator_Test
     {
         // Arrange
         var validator = new Create_DoctorInfo_Command_Validator();
-        var command = new Create_DoctorInfo_Command(invalidTitle, imageFile, "", "", "", "");
+        var command = new Create_DoctorInfo_Command(invalidTitle, imageFile, "", "", "", "", new List<Specialization>());
 
         // Act
         var result = validator.TestValidate(command);
 
         // Assert
-        result.ShouldHaveValidationErrorFor(cmd => cmd.fullName);
+        result.ShouldHaveValidationErrorFor(cmd => cmd.FullName);
     }
 
     [Theory]
@@ -47,7 +48,7 @@ public class Create_DoctorInfo_Command_Validator_Test
     {
         // Arrange
         var validator = new Create_DoctorInfo_Command_Validator();
-        var command = new Create_DoctorInfo_Command(invalidTitle, imageFile, "", "", "", "");
+        var command = new Create_DoctorInfo_Command(invalidTitle, imageFile, "", "", "", "",new List<Specialization>());
 
         // Act
         var result = validator.TestValidate(command);
@@ -63,12 +64,12 @@ public class Create_DoctorInfo_Command_Validator_Test
     {
         // Arrange
         var validator = new Create_DoctorInfo_Command_Validator();
-        var command = new Create_DoctorInfo_Command(invalidTitle, null, "", "", "", "");
+        var command = new Create_DoctorInfo_Command(invalidTitle, null, "", "", "", "", new List<Specialization>());
 
         // Act
         var result = validator.TestValidate(command);
 
         // Assert
-        result.ShouldHaveValidationErrorFor(cmd => cmd.fileImage);
+        result.ShouldHaveValidationErrorFor(cmd => cmd.FileImage);
     }
 }

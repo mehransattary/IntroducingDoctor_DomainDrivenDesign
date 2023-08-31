@@ -7,7 +7,8 @@ namespace Doctor.Domain.DoctorInformationAgg.Repository;
 public interface IDoctorInformationRepository : IBaseRepository<DoctorInformation>
 {
     Task<bool> DeleteDoctorInfo(long docInfoId);
-    Task<DoctorInformation> Get_DoctorInfo_By_Id(long docInfoId);
-    Task<List<DoctorInformation>> Get_List_DoctorInfo();
+    Task<long> AddAddress(long docInfoId, string textAddress, string? codePosti);
+    Task<long> AddContactNumber(long docInfoId, string mobile);
+
 
 }

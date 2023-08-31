@@ -23,16 +23,5 @@ public class MedicalServiceRepository : BaseRepository<MedicalService>, IMedical
         return true;
     }
 
-    public async Task<List<MedicalService>?> GetList_MedicalService(CancellationToken cancellation)
-    {
-        return await _context.MedicalServices
-               .ToListAsync(cancellation);
-    }
-
-    public async Task<MedicalService?> Get_MedicalService_By_Id(long medicalServiceid, CancellationToken cancellation)
-    {
-        return await _context.MedicalServices
-                   .FirstOrDefaultAsync(f => f.Id == medicalServiceid, cancellation);
-
-    }
+ 
 }

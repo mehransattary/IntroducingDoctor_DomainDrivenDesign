@@ -4,9 +4,9 @@ using FluentValidation;
 
 namespace Doctor.Application.AboutUsAgg.Edit;
 
-public class Edit_ContactUs_Command_Validator: AbstractValidator<Edit_ContactUs_Command>
+public class Edit_AboutUs_Command_Validator: AbstractValidator<Edit_AboutUs_Command>
 {
-    public Edit_ContactUs_Command_Validator()
+    public Edit_AboutUs_Command_Validator()
     {
         RuleFor(x => x.Title).NotNull().NotEmpty().WithMessage(ValidationMessages.required("Title"));
 

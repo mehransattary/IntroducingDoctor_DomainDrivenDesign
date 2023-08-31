@@ -29,19 +29,6 @@ public class AboutUsRepository : BaseRepository<AboutUs>, IAboutUsRepository
         return true;
     }
 
-    public async Task<AboutUs> Get_AboutUs()
-    {
-        var about = await _contex.AboutUs
-          .FirstOrDefaultAsync();
-        if (about == null)
-            return new AboutUs("","","");
-        return about;
-    }
 
-
-    public async Task<bool> IsExist_AboutUs()
-    {
-        return await _contex.AboutUs.AnyAsync();
-    }
 
 }

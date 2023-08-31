@@ -1,5 +1,7 @@
 ﻿
 using Common.Application;
+using Doctor.Application.DoctorInformationAgg.AddAddress;
+using Doctor.Application.DoctorInformationAgg.AddContactNumber;
 using Doctor.Application.DoctorInformationAgg.Create;
 using Doctor.Application.DoctorInformationAgg.Edit;
 using Doctor.Application.DoctorInformationAgg.Remove;
@@ -7,7 +9,6 @@ using Doctor.Query.DoctorInformationAgg.DTOs;
 using Doctor.Query.DoctorInformationAgg.GetById;
 using Doctor.Query.DoctorInformationAgg.GetList;
 using MediatR;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Doctor.Presentation.Facade.DoctorInformationAgg;
 
@@ -42,5 +43,13 @@ public class DoctorInformationFacade : IDoctorInformationFacade
     public async Task<OperationResult> Remove(long Id)
     {
         return await _mediator.Send(new Remove_DoctorInfo_Command(Id));
+    }
+    public async Task<OperationResult> AddAddress(AddAddress_DoctorInfo_Command command)
+    {
+        return await _mediator.Send(new AddAddress_DoctorInfo_Command(command.DoctorInformationId, command.TextAddress, command.CodePosti));
+    }
+    public async Task<OperationResult> AddContactNumber(AddContactNumber_DoctorInfo_Command command)
+    {
+        return await _mediator.Send(new AddContactNumber_DoctorInfo_Command(command.DoctorInformationId, command.Mobile));
     }
 }

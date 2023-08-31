@@ -80,10 +80,9 @@ public class DoctorInformationTest
                 .SetDescription("test").Build();
 
         // Act
-        var address = new List<Address>()
-        {new Address("t1",""),new Address("t2","")};
+        var address = new Address("t1", "");
 
-        docInfo.SetAddresss(address);
+        docInfo.SetAddress(address);
 
         // Assert
         docInfo.Addresses.Should().Contain(address);
@@ -101,10 +100,9 @@ public class DoctorInformationTest
                 .SetDescription("test").Build();
 
         // Act
-        var contacts = new List<ContactNumber>()
-        {new ContactNumber("09369944780"),new ContactNumber("091461432514")};
+        var contacts = new ContactNumber("09369944780");
 
-        docInfo.SetContactNumbers(contacts);
+        docInfo.SetContactNumber(contacts);
         // Assert
         docInfo.ContactNumbers.Should().Contain(contacts);
     }

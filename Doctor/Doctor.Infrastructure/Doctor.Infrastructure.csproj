@@ -16,4 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Doctor.Application\Doctor.Application.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Persistent.Ef\VisitAgg\" />
+  </ItemGroup>
 </Project>

@@ -1,4 +1,6 @@
 ﻿using Common.AspNetCore;
+using Doctor.Application.DoctorInformationAgg.AddAddress;
+using Doctor.Application.DoctorInformationAgg.AddContactNumber;
 using Doctor.Application.DoctorInformationAgg.Create;
 using Doctor.Application.DoctorInformationAgg.Edit;
 using Doctor.Presentation.Facade.DoctorInformationAgg;
@@ -48,6 +50,19 @@ public class DoctorInformationController : ApiController
     public async Task<ApiResult> Delete(long doctorInfoId)
     {
         var result = await _facade.Remove(doctorInfoId);
+        return CommandResult(result);
+    }
+
+    [HttpGet("add_address")]
+    public async Task<ApiResult> AddAddress(AddAddress_DoctorInfo_Command command)
+    {
+        var result = await _facade.AddAddress(command);
+        return CommandResult(result);
+    }
+    [HttpGet("add_contract_number")]
+    public async Task<ApiResult> AddContactNumber(AddContactNumber_DoctorInfo_Command command)
+    {
+        var result = await _facade.AddContactNumber(command);
         return CommandResult(result);
     }
 }

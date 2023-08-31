@@ -6,7 +6,7 @@ namespace Doctor.Domain.DoctorInformationAgg;
 public class DoctorInformation : AggregateRoot
 {
     #region Constructors
-    public DoctorInformation(string fullName, string image, string medicalLicenseNumber, string email,string shortdesc,string desc)
+    public DoctorInformation(string fullName, string image, string? medicalLicenseNumber, string? email,string? shortdesc,string? desc)
     {
         Guard(fullName, image);
         FullName = fullName;
@@ -36,7 +36,7 @@ public class DoctorInformation : AggregateRoot
     #endregion
 
     #region Methods
-    public void Edit(string fullName, string image, string medicalLicenseNumber, string email, string shortdesc, string desc)
+    public void Edit(string fullName, string image, string? medicalLicenseNumber, string? email, string? shortdesc, string? desc)
     {
         Guard(fullName, image);
         FullName = fullName;
@@ -54,15 +54,15 @@ public class DoctorInformation : AggregateRoot
     }
 
 
-    public void SetAddresss(List<Address> addresses)
+    public void SetAddress(Address addresse)
     {
-        addresses.ForEach(s => s.DoctorInformationId = Id);
-        Addresses = addresses;
+         addresse.DoctorInformationId = this.Id; 
+         Addresses.Add(addresse);
     }
-    public void SetContactNumbers(List<ContactNumber> contactNumbers)
+    public void SetContactNumber(ContactNumber contactNumber)
     {
-        contactNumbers.ForEach(s => s.DoctorInformationId = Id);
-        ContactNumbers = contactNumbers;
+        contactNumber.DoctorInformationId = this.Id;
+        ContactNumbers.Add(contactNumber);
     }
     public void SetSpecialization(List<Specialization> specializations)
     {

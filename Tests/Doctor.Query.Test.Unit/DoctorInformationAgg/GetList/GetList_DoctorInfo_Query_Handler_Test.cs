@@ -6,6 +6,7 @@ using NSubstitute;
 using System.Linq;
 using FluentAssertions;
 using Doctor.Query.DoctorInformationAgg.Mapper;
+using Doctor.Domain.DoctorInformationAgg.Services;
 
 namespace Doctor.Query.Test.Unit.DoctorInformationAgg.GetList;
 
@@ -15,7 +16,7 @@ public class GetList_DoctorInfo_Query_Handler_Test
     public async Task Handle_Should_Return_ListOfDoctorInformationDto()
     {
         // Arrange
-        var doctorInfoRepositoryMock = Substitute.For<IDoctorInformationRepository>();
+        var doctorInfoRepositoryMock = Substitute.For<IDoctorInformationDomianService>();
         var queryHandler = new GetList_DoctorInfo_Query_Handler(doctorInfoRepositoryMock);
 
         var query = new GetList_DoctorInfo_Query();

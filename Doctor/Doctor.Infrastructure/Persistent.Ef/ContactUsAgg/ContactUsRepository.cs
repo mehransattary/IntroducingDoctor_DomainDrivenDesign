@@ -29,19 +29,6 @@ public class ContactUsRepository : BaseRepository<ContactUs>, IContactUsReposito
         return true;
     }
 
-    public async Task<ContactUs> Get_ContactUs()
-    {
-        var about = await _contex.ContactUs
-          .FirstOrDefaultAsync();
-        if (about == null)
-            return new ContactUs("","","");
-        return about;
-    }
 
-
-    public async Task<bool> IsExist_ContactUs()
-    {
-        return await _contex.ContactUs.AnyAsync();
-    }
 
 }

@@ -3,6 +3,8 @@ using Common.Application;
 using Doctor.Application.AboutUsAgg.Create;
 using Doctor.Application.AboutUsAgg.Edit;
 using Doctor.Application.AboutUsAgg.Remove;
+using Doctor.Application.ContactUsAgg.Create;
+using Doctor.Application.ContactUsAgg.Edit;
 using Doctor.Query.AboutUsAgg.DTOs;
 using Doctor.Query.AboutUsAgg.GetById;
 using MediatR;

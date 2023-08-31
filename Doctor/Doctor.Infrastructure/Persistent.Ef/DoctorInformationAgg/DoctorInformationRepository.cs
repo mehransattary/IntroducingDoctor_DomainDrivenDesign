@@ -28,16 +28,30 @@ public class DoctorInformationRepository : BaseRepository<DoctorInformation>, ID
         Context.RemoveRange(docInfo);
         return true;
     }
-
-    public async Task<DoctorInformation> Get_DoctorInfo_By_Id(long docInfoId)
+    public async Task<long> AddAddress(long docInfoId, string textAddress, string? codePosti)
     {
-        return await _contex.DoctorInformations
-               .FirstOrDefaultAsync(f => f.Id == docInfoId);
-     
+        var addresse = new Address(textAddress, codePosti);
+
+        var docInfo = await _contex.DoctorInformations
+         .FirstOrDefaultAsync(f => f.Id == docInfoId);
+        if (docInfo == null)
+            return 0;
+        docInfo.SetAddress(addresse);
+       await Context.SaveChangesAsync();
+        return docInfo.Id;
+    }
+    public async Task<long> AddContactNumber(long docInfoId, string mobile)
+    {
+        var contract = new ContactNumber(mobile);
+
+        var docInfo = await _contex.DoctorInformations
+         .FirstOrDefaultAsync(f => f.Id == docInfoId);
+        if (docInfo == null)
+            return 0;
+        docInfo.SetContactNumber(contract);
+        await Context.SaveChangesAsync();
+        return docInfo.Id;
     }
 
-    public async Task<List<DoctorInformation>> Get_List_DoctorInfo()
-    {
-        return await _contex.DoctorInformations.ToListAsync();
-    }
+
 }

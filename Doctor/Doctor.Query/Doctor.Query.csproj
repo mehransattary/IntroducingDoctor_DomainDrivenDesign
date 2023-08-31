@@ -11,4 +11,12 @@
     <ProjectReference Include="..\Doctor.Infrastructure\Doctor.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="VisitAgg\DTOs\" />
+    <Folder Include="VisitAgg\GetByDayId\" />
+    <Folder Include="VisitAgg\GetList\" />
+    <Folder Include="VisitAgg\Mapper\" />
+    <Folder Include="VisitAgg\Services\" />
+  </ItemGroup>
+
 </Project>

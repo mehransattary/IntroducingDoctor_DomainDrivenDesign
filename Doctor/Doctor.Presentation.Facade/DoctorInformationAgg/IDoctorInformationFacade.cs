@@ -1,6 +1,8 @@
 ﻿
 
 using Common.Application;
+using Doctor.Application.DoctorInformationAgg.AddAddress;
+using Doctor.Application.DoctorInformationAgg.AddContactNumber;
 using Doctor.Application.DoctorInformationAgg.Create;
 using Doctor.Application.DoctorInformationAgg.Edit;
 using Doctor.Query.DoctorInformationAgg.DTOs;
@@ -16,4 +18,7 @@ public interface IDoctorInformationFacade
 
     Task<DoctorInformationDto> GetById(long medicalServiceId);
     Task<List<DoctorInformationDto>> GetList();
+
+    Task<OperationResult> AddContactNumber(AddContactNumber_DoctorInfo_Command command);
+    Task<OperationResult> AddAddress(AddAddress_DoctorInfo_Command command);
 }
