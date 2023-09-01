@@ -5,11 +5,12 @@ namespace Doctor.Domain.DoctorInformationAgg;
 
 public class Address : BaseEntity
 {
-    public Address(string textAddress, string codePosti)
+    public Address(long doctorInformationId, string textAddress, string codePosti)
     {
         NullOrEmptyDomainDataException.CheckString(textAddress, nameof(textAddress));
         TextAddress = textAddress;
         CodePosti = codePosti;
+        DoctorInformationId= doctorInformationId;   
     }
 
     public long DoctorInformationId { get; internal set; }

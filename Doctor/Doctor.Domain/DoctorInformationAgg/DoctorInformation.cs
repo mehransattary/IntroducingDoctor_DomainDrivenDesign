@@ -15,6 +15,9 @@ public class DoctorInformation : AggregateRoot
         Email = email;
         ShortDescription = shortdesc;
         Description = desc;
+        Addresses = new List<Address>();
+        ContactNumbers = new List<ContactNumber>();
+        Specializatiosn = new List<Specialization>();
 
     }
 
@@ -56,7 +59,7 @@ public class DoctorInformation : AggregateRoot
 
     public void SetAddress(Address addresse)
     {
-         addresse.DoctorInformationId = this.Id; 
+        // addresse.DoctorInformationId = this.Id; 
          Addresses.Add(addresse);
     }
     public void SetContactNumber(ContactNumber contactNumber)

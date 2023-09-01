@@ -53,13 +53,13 @@ public class DoctorInformationController : ApiController
         return CommandResult(result);
     }
 
-    [HttpGet("add_address")]
+    [HttpPost("add_address")]
     public async Task<ApiResult> AddAddress(AddAddress_DoctorInfo_Command command)
     {
         var result = await _facade.AddAddress(command);
         return CommandResult(result);
     }
-    [HttpGet("add_contract_number")]
+    [HttpPost("add_contract_number")]
     public async Task<ApiResult> AddContactNumber(AddContactNumber_DoctorInfo_Command command)
     {
         var result = await _facade.AddContactNumber(command);

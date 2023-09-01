@@ -25,31 +25,31 @@ public class DoctorInformationRepository : BaseRepository<DoctorInformation>, ID
           .FirstOrDefaultAsync(f => f.Id == docInfoId);
         if (docInfo == null)
             return false;
-        Context.RemoveRange(docInfo);
+        _contex.RemoveRange(docInfo);
         return true;
     }
     public async Task<long> AddAddress(long docInfoId, string textAddress, string? codePosti)
     {
-        var addresse = new Address(textAddress, codePosti);
+        var addresse = new Address(docInfoId,textAddress, codePosti);
 
-        var docInfo = await _contex.DoctorInformations
-         .FirstOrDefaultAsync(f => f.Id == docInfoId);
+        var docInfo = await GetTracking(docInfoId);
         if (docInfo == null)
             return 0;
         docInfo.SetAddress(addresse);
-       await Context.SaveChangesAsync();
+        await Save();
         return docInfo.Id;
     }
+
+
     public async Task<long> AddContactNumber(long docInfoId, string mobile)
     {
         var contract = new ContactNumber(mobile);
 
-        var docInfo = await _contex.DoctorInformations
-         .FirstOrDefaultAsync(f => f.Id == docInfoId);
+        var docInfo = await GetTracking(docInfoId);
         if (docInfo == null)
             return 0;
         docInfo.SetContactNumber(contract);
-        await Context.SaveChangesAsync();
+        await Save();
         return docInfo.Id;
     }
 

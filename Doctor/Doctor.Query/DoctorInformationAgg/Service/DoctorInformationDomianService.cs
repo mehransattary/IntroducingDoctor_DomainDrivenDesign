@@ -27,6 +27,6 @@ public class DoctorInformationDomianService: IDoctorInformationDomianService
 
     public async Task<List<DoctorInformation>> Get_List_DoctorInfo()
     {
-        return await _contex.DoctorInformations.ToListAsync();
+        return await _contex.DoctorInformations.Include(x=>x.Addresses).Include(x=>x.ContactNumbers).ToListAsync();
     }
 }

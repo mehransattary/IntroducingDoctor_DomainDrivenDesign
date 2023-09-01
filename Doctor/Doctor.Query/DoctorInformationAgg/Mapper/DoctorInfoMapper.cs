@@ -18,9 +18,10 @@ public static class DoctorInfoMapper
             ImageName = doctorInfo.ImageName,
             Description= doctorInfo.Description,    
             Email= doctorInfo.Email,    
-            MedicalLicenseNumber= doctorInfo.MedicalLicenseNumber,  
+            MedicalLicenseNumber= doctorInfo.MedicalLicenseNumber,
+            Id = doctorInfo.Id,
+            CreationDate = doctorInfo.CreationDate,
         };
-
     }
     public static List<DoctorInformationDto> Map(this List<DoctorInformation>? doctorInfos)
     {
@@ -36,6 +37,11 @@ public static class DoctorInfoMapper
                 Description = doctorInfo.Description,
                 Email = doctorInfo.Email,
                 MedicalLicenseNumber = doctorInfo.MedicalLicenseNumber,
+                Id= doctorInfo.Id,
+                CreationDate= doctorInfo.CreationDate,    
+                Addresses= doctorInfo.Addresses ,
+                ContactNumbers= doctorInfo.ContactNumbers,  
+                
             });
         });
         return model;
