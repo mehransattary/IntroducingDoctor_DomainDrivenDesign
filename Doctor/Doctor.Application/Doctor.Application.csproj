@@ -11,10 +11,4 @@
     <ProjectReference Include="..\Doctor.Domain\Doctor.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="VisitAgg\Create\" />
-    <Folder Include="VisitAgg\Edit\" />
-    <Folder Include="VisitAgg\Remove\" />
-  </ItemGroup>
-
 </Project>

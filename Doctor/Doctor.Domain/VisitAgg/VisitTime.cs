@@ -27,11 +27,17 @@ public class VisitTime : BaseEntity
   
     public string StartTime { get; private set; }
     public string EndTime { get; private set; }
-
     public long VisitDaysId { get; internal set; }
 
     #endregion
 
+    public void Edit(string startTime, string endTime)
+    {
+        NullOrEmptyDomainDataException.CheckString(startTime, nameof(startTime));
+        NullOrEmptyDomainDataException.CheckString(endTime, nameof(endTime));
 
+        this.StartTime = startTime;
+        this.EndTime = endTime;
+    }
 
 }

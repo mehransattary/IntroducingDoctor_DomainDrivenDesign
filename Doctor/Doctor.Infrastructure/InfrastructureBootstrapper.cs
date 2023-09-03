@@ -4,6 +4,7 @@ using Doctor.Domain.AboutUsAgg.Repository;
 using Doctor.Domain.ContactUsAgg.Repository;
 using Doctor.Domain.DoctorInformationAgg.Repository;
 using Doctor.Domain.MedicalServicesAgg.Repository;
+using Doctor.Domain.VisitAgg.Repository;
 using Doctor.Infrastructure.Persistent.Ef;
 using Doctor.Infrastructure.Persistent.Ef.AboutUsAgg;
 using Doctor.Infrastructure.Persistent.Ef.ContactUsAgg;
@@ -23,6 +24,8 @@ public class InfrastructureBootstrapper
         services.AddTransient<IDoctorInformationRepository, DoctorInformationRepository>();
         services.AddTransient<IAboutUsRepository, AboutUsRepository>();
         services.AddTransient<IContactUsRepository, ContactUsRepository>();
+        services.AddTransient<IVisitRepository, VisitRepository>();
+
 
         services.AddDbContext<DoctorContext>(option =>
         {

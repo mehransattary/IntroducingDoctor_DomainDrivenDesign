@@ -1,8 +1,7 @@
 ﻿
 
 namespace Doctor.Domain.VisitAgg.Services;
-
-public interface IVisitTimeDomianService
+public interface IVisitDomianService
 {
 
 }

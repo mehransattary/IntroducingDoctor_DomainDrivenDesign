@@ -36,11 +36,16 @@ public class VisitDay:AggregateRoot
         this.Title = title;
         this.Day = day;
     }
-    public void SetTimes(List<VisitTime> visitTimes)
+    public void AddTime(VisitTime visitTime)
     {
-        visitTimes.ForEach(s => s.VisitDaysId = Id);
-        VisitTimes = visitTimes;
+        visitTime.VisitDaysId = Id;
+        VisitTimes.Add(visitTime);
     }
+    public void RemoveTime(VisitTime visitTime)
+    {
+        VisitTimes.Remove(visitTime);
+    }
+  
     public void Guard(string title)
     {
         NullOrEmptyDomainDataException.CheckString(title, nameof(title));     
