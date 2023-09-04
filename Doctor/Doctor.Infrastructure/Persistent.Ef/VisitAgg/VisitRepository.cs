@@ -1,11 +1,8 @@
 ﻿
 
-using Common.Application;
 using Doctor.Domain.VisitAgg;
 using Doctor.Domain.VisitAgg.Repository;
-using Doctor.Domain.VisitAgg.Services;
 using Doctor.Infrastructure._Utilities;
-using Microsoft.EntityFrameworkCore;
 
 namespace Doctor.Infrastructure.Persistent.Ef.VisitAgg;
 

@@ -80,7 +80,7 @@ public class DoctorInformationTest
                 .SetDescription("test").Build();
 
         // Act
-        var address = new Address("t1", "");
+        var address = new Address(1,"t1", "");
 
         docInfo.SetAddress(address);
 

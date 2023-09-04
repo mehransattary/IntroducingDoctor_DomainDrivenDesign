@@ -13,7 +13,7 @@ using Doctor.Infrastructure.Persistent.Ef.MedicalServiceAgg;
 using Doctor.Infrastructure.Persistent.Ef.Persistent.Dapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-
+using Doctor.Infrastructure.Persistent.Ef.VisitAgg;
 namespace Doctor.Infrastructure;
 
 public class InfrastructureBootstrapper

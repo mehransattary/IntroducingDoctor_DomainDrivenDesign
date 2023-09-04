@@ -16,6 +16,8 @@ using Doctor.Domain.AboutUsAgg.Services;
 using Doctor.Application.AboutUsAgg.Service;
 using Doctor.Domain.ContactUsAgg.Service;
 using Doctor.Application.ContactUsAgg.Service;
+using Doctor.Query.VisitAgg.Services;
+using Doctor.Domain.VisitAgg.Services;
 
 namespace Doctor.Config;
 
@@ -33,6 +35,7 @@ public static class DoctorBootstrapper
         services.AddTransient<IDoctorInformationDomianService, DoctorInformationDomianService>();
         services.AddTransient<IAboutDomainService, AboutDomainService>();
         services.AddTransient<IContactUsDomainService, ContactUsDomainService>();
+        services.AddTransient<IVisitDomianService, VisitDomianService>();
 
         services.AddValidatorsFromAssembly(typeof(Create_MedicalService_Command_Validator).Assembly);
         services.InitFacadeDependency();
