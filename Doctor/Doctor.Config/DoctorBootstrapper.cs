@@ -6,18 +6,20 @@ using Doctor.Presentation.Facade;
 using MediatR;
 using Doctor.Query.MedicalServiceAgg.GetList;
 using Doctor.Application.MedicalServiceAgg.Create;
-using Doctor.Application.MedicalServiceAgg.Services;
 using Doctor.Application._Utilities;
 using Common.Application.FileUtil.Interfaces;
 using Common.Application.FileUtil.Services;
 using Doctor.Domain.DoctorInformationAgg.Services;
-using Doctor.Application.DoctorInformationAgg.Service;
 using Doctor.Domain.AboutUsAgg.Services;
-using Doctor.Application.AboutUsAgg.Service;
 using Doctor.Domain.ContactUsAgg.Service;
-using Doctor.Application.ContactUsAgg.Service;
 using Doctor.Query.VisitAgg.Services;
 using Doctor.Domain.VisitAgg.Services;
+using Doctor.Query.AboutUsAgg.Service;
+using Doctor.Query.DoctorInformationAgg.Service;
+using Doctor.Query.ContactUsAgg.Service;
+using Doctor.Query.MedicalServiceAgg.Services;
+using Doctor.Application.UserAgg;
+using Doctor.Domain.UserAgg.Services;
 
 namespace Doctor.Config;
 
@@ -36,6 +38,7 @@ public static class DoctorBootstrapper
         services.AddTransient<IAboutDomainService, AboutDomainService>();
         services.AddTransient<IContactUsDomainService, ContactUsDomainService>();
         services.AddTransient<IVisitDomianService, VisitDomianService>();
+        services.AddTransient<IUserDomainService, UserDomainService>();
 
         services.AddValidatorsFromAssembly(typeof(Create_MedicalService_Command_Validator).Assembly);
         services.InitFacadeDependency();

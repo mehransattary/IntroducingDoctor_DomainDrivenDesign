@@ -3,11 +3,11 @@
 
 using Doctor.Domain.ContactUsAgg;
 using Doctor.Domain.ContactUsAgg.Service;
-using Doctor.Infrastructure.Persistent.Ef.Persistent.Dapper;
 using Doctor.Infrastructure.Persistent.Ef;
 using Microsoft.EntityFrameworkCore;
+using Doctor.Infrastructure.Persistent.Dapper;
 
-namespace Doctor.Application.ContactUsAgg.Service;
+namespace Doctor.Query.ContactUsAgg.Service;
 
 public class ContactUsDomainService : IContactUsDomainService
 {

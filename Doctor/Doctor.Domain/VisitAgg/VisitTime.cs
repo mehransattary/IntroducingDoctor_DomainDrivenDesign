@@ -13,21 +13,21 @@ public class VisitTime : BaseEntity
     {
 
     }
-    public VisitTime(string startTime, string endTime)
+    public VisitTime(long visitDaysId,string startTime, string endTime)
     {
         NullOrEmptyDomainDataException.CheckString(startTime, nameof(startTime));
         NullOrEmptyDomainDataException.CheckString(endTime, nameof(endTime));
 
         this.StartTime = startTime;
         this.EndTime = endTime;
+        this.VisitDayId = visitDaysId;  
     }
     #endregion
 
     #region Properties
-  
+    public long VisitDayId { get; internal set; }
     public string StartTime { get; private set; }
     public string EndTime { get; private set; }
-    public long VisitDaysId { get; internal set; }
 
     #endregion
 

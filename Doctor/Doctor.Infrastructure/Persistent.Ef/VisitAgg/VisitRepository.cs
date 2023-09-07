@@ -20,7 +20,7 @@ public class VisitRepository : BaseRepository<VisitDay>, IVisitRepository
         var visitDay = await GetTracking(visitDayId);
         if (visitDay == null)
             return false;
-        visitDay.AddTime(new VisitTime(startTime, endTime));
+        visitDay.AddTime(new VisitTime(visitDayId,startTime, endTime));
         await Save();
         return true;
     }
@@ -36,7 +36,7 @@ public class VisitRepository : BaseRepository<VisitDay>, IVisitRepository
         if (visitDay == null)
             return false;
 
-        var visitTime = visitDay.VisitTimes.FirstOrDefault(x => x.VisitDaysId == visitDay.Id);
+        var visitTime = visitDay.VisitTimes.FirstOrDefault(x => x.VisitDayId == visitDay.Id);
         if (visitTime == null)
             return false;
 
@@ -56,7 +56,7 @@ public class VisitRepository : BaseRepository<VisitDay>, IVisitRepository
         if (visitDay == null)
             return false;
 
-        var visitTime=  visitDay.VisitTimes.FirstOrDefault(x=>x.VisitDaysId==visitDay.Id);
+        var visitTime=  visitDay.VisitTimes.FirstOrDefault(x=>x.VisitDayId == visitDay.Id);
         if(visitTime==null)
             return false;
 

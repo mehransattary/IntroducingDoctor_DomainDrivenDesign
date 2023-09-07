@@ -24,7 +24,7 @@ public class VisitDay:AggregateRoot
     #region Properties
     public string Title { get; private set; }
     public DayEnum Day { get; private set; }
-    public List<VisitTime> VisitTimes { get; private set; }
+    public List<VisitTime> VisitTimes { get; private set; } = new List<VisitTime>();
 
     #endregion
 
@@ -38,7 +38,7 @@ public class VisitDay:AggregateRoot
     }
     public void AddTime(VisitTime visitTime)
     {
-        visitTime.VisitDaysId = Id;
+        visitTime.VisitDayId = Id;
         VisitTimes.Add(visitTime);
     }
     public void RemoveTime(VisitTime visitTime)

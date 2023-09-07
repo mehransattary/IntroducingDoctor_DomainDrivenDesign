@@ -1,6 +1,8 @@
 ﻿using Common.AspNetCore;
+using Doctor.Application.VisitAgg.AddTime;
 using Doctor.Application.VisitAgg.Create;
 using Doctor.Application.VisitAgg.Edit;
+using Doctor.Application.VisitAgg.EditTime;
 using Doctor.Presentation.Facade.VisitAgg;
 using Doctor.Query.VisitAgg.DTOs;
 using Microsoft.AspNetCore.Mvc;
@@ -46,6 +48,20 @@ public class VisitDayController : ApiController
     public async Task<ApiResult> Delete(long visitDayId)
     {
         var result = await _facade.Remove(visitDayId);
+        return CommandResult(result);
+    }
+
+    [HttpPost("AddTime")]
+    public async Task<ApiResult> AddTime([FromForm] AddTime_Command command)
+    {
+        var result = await _facade.AddTime(command);
+        return CommandResult(result);
+    }
+
+    [HttpPut("EditTime")]
+    public async Task<ApiResult> EditTime([FromForm] EditTime_Command command)
+    {
+        var result = await _facade.EditTime(command);
         return CommandResult(result);
     }
 }

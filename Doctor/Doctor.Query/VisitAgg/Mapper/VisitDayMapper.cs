@@ -15,6 +15,7 @@ public static class VisitDayMapper
             return new VisitDayDto();
         return new VisitDayDto()
         {
+            Id= visitDay.Id,    
            Title= visitDay.Title,   
            Day= visitDay.Day,   
            VisitTimes= visitDay.VisitTimes, 
@@ -29,6 +30,7 @@ public static class VisitDayMapper
         {
             model.Add(new VisitDayDto()
             {
+                Id= x.Id,   
                 Title = x.Title,
                 Day = x.Day,
                 VisitTimes = x.VisitTimes,  

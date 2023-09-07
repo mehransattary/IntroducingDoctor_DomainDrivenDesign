@@ -12,7 +12,7 @@ public class VisitTime_Configuration : IEntityTypeConfiguration<VisitTime>
     {
         builder.ToTable("VisitTimes", "visit");
         builder.HasKey(x => x.Id);
-        builder.Property(b => b.VisitDaysId).IsRequired();
+        builder.Property(b => b.VisitDayId).IsRequired();
         builder.Property(b => b.StartTime).IsRequired().HasMaxLength(50);
         builder.Property(b => b.EndTime).IsRequired().HasMaxLength(50);
 

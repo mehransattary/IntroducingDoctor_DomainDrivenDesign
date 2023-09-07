@@ -4,7 +4,7 @@ using Doctor.Application.ContactUsAgg.Create;
 using Doctor.Application.ContactUsAgg.Edit;
 using Doctor.Application.ContactUsAgg.Remove;
 using Doctor.Query.ContactUsAgg.DTOs;
-using Doctor.Query.ContactUsAgg.GetById;
+using Doctor.Query.ContactUsAgg.Get;
 using MediatR;
 
 namespace Doctor.Presentation.Facade.ContactUsAgg;

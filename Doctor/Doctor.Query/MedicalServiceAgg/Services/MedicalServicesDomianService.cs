@@ -1,20 +1,20 @@
 ﻿using Doctor.Domain.MedicalServicesAgg;
 using Doctor.Domain.MedicalServicesAgg.Services;
-using Doctor.Infrastructure.Persistent.Ef.Persistent.Dapper;
 using Doctor.Infrastructure.Persistent.Ef;
 using Microsoft.EntityFrameworkCore;
+using Doctor.Infrastructure.Persistent.Dapper;
 
-namespace Doctor.Application.MedicalServiceAgg.Services;
+namespace Doctor.Query.MedicalServiceAgg.Services;
 
 public class MedicalServicesDomianService : IMedicalServicesDomianService
 {
     private readonly DapperContext _dapperContext;
     private readonly DoctorContext contex;
 
-    public MedicalServicesDomianService(DoctorContext context, DapperContext dapperContext) 
+    public MedicalServicesDomianService(DoctorContext context, DapperContext dapperContext)
     {
         _dapperContext = dapperContext;
-        this.contex = context;
+        contex = context;
     }
     public async Task<List<MedicalService>?> GetList_MedicalService(CancellationToken cancellation)
     {

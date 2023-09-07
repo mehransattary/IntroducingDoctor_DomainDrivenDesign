@@ -3,11 +3,11 @@
 
 using Doctor.Domain.AboutUsAgg;
 using Doctor.Domain.AboutUsAgg.Services;
-using Doctor.Infrastructure.Persistent.Ef.Persistent.Dapper;
 using Doctor.Infrastructure.Persistent.Ef;
 using Microsoft.EntityFrameworkCore;
+using Doctor.Infrastructure.Persistent.Dapper;
 
-namespace Doctor.Application.AboutUsAgg.Service;
+namespace Doctor.Query.AboutUsAgg.Service;
 
 public class AboutDomainService : IAboutDomainService
 {

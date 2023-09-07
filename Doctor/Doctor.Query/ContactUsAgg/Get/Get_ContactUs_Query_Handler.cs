@@ -8,7 +8,7 @@ using Doctor.Query.AboutUsAgg.Mapper;
 using Doctor.Query.ContactUsAgg.DTOs;
 using Doctor.Query.ContactUsAgg.Mapper;
 
-namespace Doctor.Query.ContactUsAgg.GetById;
+namespace Doctor.Query.ContactUsAgg.Get;
 
 public class Get_ContactUs_Query_Handler : IQueryHandler<Get_ContactUs_Query, ContactUsDto>
 {
@@ -19,7 +19,7 @@ public class Get_ContactUs_Query_Handler : IQueryHandler<Get_ContactUs_Query, Co
     }
     public async Task<ContactUsDto> Handle(Get_ContactUs_Query request, CancellationToken cancellationToken)
     {
-      var contactus= await _contactUsDomainService.Get_ContactUs();
+        var contactus = await _contactUsDomainService.Get_ContactUs();
         return contactus.Map();
     }
 }

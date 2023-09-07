@@ -1,13 +1,11 @@
-﻿
-
-using Doctor.Domain.DoctorInformationAgg;
+﻿using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Domain.DoctorInformationAgg.Repository;
 using Doctor.Domain.MedicalServicesAgg;
 using Doctor.Infrastructure._Utilities;
-using Doctor.Infrastructure.Persistent.Ef.Persistent.Dapper;
+using Doctor.Infrastructure.Persistent.Dapper;
 using Microsoft.EntityFrameworkCore;
 
-namespace Doctor.Infrastructure.Persistent.Ef.Doctor_Information;
+namespace Doctor.Infrastructure.Persistent.Ef.DoctorInformationAgg;
 
 public class DoctorInformationRepository : BaseRepository<DoctorInformation>, IDoctorInformationRepository
 {
@@ -30,7 +28,7 @@ public class DoctorInformationRepository : BaseRepository<DoctorInformation>, ID
     }
     public async Task<long> AddAddress(long docInfoId, string textAddress, string? codePosti)
     {
-        var addresse = new Address(docInfoId,textAddress, codePosti);
+        var addresse = new Address(docInfoId, textAddress, codePosti);
 
         var docInfo = await GetTracking(docInfoId);
         if (docInfo == null)

@@ -3,7 +3,7 @@ using Doctor.Domain.AboutUsAgg;
 using Doctor.Domain.AboutUsAgg.Repository;
 using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Infrastructure._Utilities;
-using Doctor.Infrastructure.Persistent.Ef.Persistent.Dapper;
+using Doctor.Infrastructure.Persistent.Dapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace Doctor.Infrastructure.Persistent.Ef.AboutUsAgg;

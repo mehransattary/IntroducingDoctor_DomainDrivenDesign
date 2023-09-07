@@ -4,6 +4,8 @@ using Doctor.Domain.AboutUsAgg;
 using Doctor.Domain.ContactUsAgg;
 using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Domain.MedicalServicesAgg;
+using Doctor.Domain.RoleAgg;
+using Doctor.Domain.UserAgg;
 using Doctor.Domain.VisitAgg;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +23,8 @@ public class DoctorContext : DbContext
     public DbSet<AboutUs> AboutUs { get; set; }
     public DbSet<ContactUs> ContactUs { get; set; }
     public DbSet<VisitDay> VisitDays { get; set; }
-
+    public DbSet<User> Users { get; set; }
+    public DbSet<Role> Roles { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

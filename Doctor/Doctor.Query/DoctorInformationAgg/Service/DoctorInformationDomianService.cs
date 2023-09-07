@@ -1,19 +1,17 @@
-﻿
-
-using Doctor.Domain.DoctorInformationAgg;
+﻿using Doctor.Domain.DoctorInformationAgg;
 using Doctor.Domain.DoctorInformationAgg.Services;
+using Doctor.Infrastructure.Persistent.Dapper;
 using Doctor.Infrastructure.Persistent.Ef;
-using Doctor.Infrastructure.Persistent.Ef.Persistent.Dapper;
 using Microsoft.EntityFrameworkCore;
 
-namespace Doctor.Application.DoctorInformationAgg.Service;
+namespace Doctor.Query.DoctorInformationAgg.Service;
 
-public class DoctorInformationDomianService: IDoctorInformationDomianService
+public class DoctorInformationDomianService : IDoctorInformationDomianService
 {
     private readonly DapperContext _dapperContext;
     private readonly DoctorContext _contex;
 
-    public DoctorInformationDomianService(DoctorContext context, DapperContext dapperContext) 
+    public DoctorInformationDomianService(DoctorContext context, DapperContext dapperContext)
     {
         _dapperContext = dapperContext;
         _contex = context;
@@ -27,6 +25,6 @@ public class DoctorInformationDomianService: IDoctorInformationDomianService
 
     public async Task<List<DoctorInformation>> Get_List_DoctorInfo()
     {
-        return await _contex.DoctorInformations.Include(x=>x.Addresses).Include(x=>x.ContactNumbers).ToListAsync();
+        return await _contex.DoctorInformations.Include(x => x.Addresses).Include(x => x.ContactNumbers).ToListAsync();
     }
 }

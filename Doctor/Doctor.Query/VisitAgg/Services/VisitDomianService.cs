@@ -1,9 +1,9 @@
 ﻿
 using Doctor.Domain.VisitAgg;
 using Doctor.Domain.VisitAgg.Services;
-using Doctor.Infrastructure.Persistent.Ef.Persistent.Dapper;
 using Doctor.Infrastructure.Persistent.Ef;
 using Microsoft.EntityFrameworkCore;
+using Doctor.Infrastructure.Persistent.Dapper;
 
 namespace Doctor.Query.VisitAgg.Services;
 

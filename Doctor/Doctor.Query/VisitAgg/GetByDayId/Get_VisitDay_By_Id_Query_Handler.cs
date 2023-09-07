@@ -1,7 +1,6 @@
 ﻿
 
 using Common.Query;
-using Doctor.Domain.DoctorInformationAgg.Services;
 using Doctor.Domain.VisitAgg.Services;
 using Doctor.Query.VisitAgg.DTOs;
 using Doctor.Query.VisitAgg.Mapper;

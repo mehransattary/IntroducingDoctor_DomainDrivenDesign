@@ -8,7 +8,7 @@ using Doctor.Domain.DoctorInformationAgg.Repository;
 using Doctor.Query.AboutUsAgg.DTOs;
 using Doctor.Query.AboutUsAgg.Mapper;
 
-namespace Doctor.Query.AboutUsAgg.GetById;
+namespace Doctor.Query.AboutUsAgg.Get;
 
 public class Get_AboutUs_Query_Handler : IQueryHandler<Get_AboutUs_Query, AboutUsDto>
 {
@@ -19,7 +19,7 @@ public class Get_AboutUs_Query_Handler : IQueryHandler<Get_AboutUs_Query, AboutU
     }
     public async Task<AboutUsDto> Handle(Get_AboutUs_Query request, CancellationToken cancellationToken)
     {
-      var about= await _aboutDomainService.Get_AboutUs();
+        var about = await _aboutDomainService.Get_AboutUs();
         return about.Map();
     }
 }
