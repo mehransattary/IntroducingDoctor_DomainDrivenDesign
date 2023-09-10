@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title> داک‌کیور - لیست تراکنش </title>
+
+<link rel="shortcut icon" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="assets/css/feathericon.min.css">
+
+<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+<div class="header">
+
+<div class="header-left">
+<a href="index.html" class="logo">
+<img src="assets/img/logo.png" alt="Logo">
+</a>
+<a href="index.html" class="logo logo-small">
+<img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
+</a>
+</div>
+
+<a href="javascript:void(0);" id="toggle_btn">
+<i class="fe fe-text-align-right"></i>
+</a>
+<div class="top-nav-search">
+<form>
+<input type="text" class="form-control" placeholder="جستجو">
+<button class="btn" type="submit"><i class="fa fa-search"></i></button>
+</form>
+</div>
+
+<a class="mobile_btn" id="mobile_btn">
+<i class="fa fa-bars"></i>
+</a>
+
+
+<ul class="nav user-menu">
+
+<li class="nav-item dropdown noti-dropdown">
+<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+<i class="fe fe-bell"></i> <span class="badge rounded-pill">3</span>
+</a>
+<div class="dropdown-menu notifications">
+<div class="topnav-dropdown-header">
+<span class="notification-title">اطلاعیه ها</span>
+<a href="javascript:void(0)" class="clear-noti">حذف همه</a>
+</div>
+<div class="noti-content">
+<ul class="notification-list">
+<li class="notification-message">
+<a href="#">
+<div class="media d-flex">
+<span class="avatar avatar-sm flex-shrink-0">
+<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/doctors/doctor-thumb-01.jpg">
+</span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">پزشک. رابین پرین</span>زمانبندی<span class="noti-title">نوبت ها</span></p>
+<p class="noti-time"><span class="notification-time">4 دقیقه قبل</span></p>
+</div>
+</div>
+</a>
+</li>
+<li class="notification-message">
+<a href="#">
+<div class="media d-flex">
+<span class="avatar avatar-sm flex-shrink-0">
+<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient1.jpg">
+</span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">مگان برد</span> نوبت گرفته است از <span class="noti-title">پزشک. رابین پرین</span></p>
+<p class="noti-time"><span class="notification-time">6 دقیقه قبل</span></p>
+</div>
+</div>
+</a>
+</li>
+<li class="notification-message">
+<a href="#">
+<div class="media d-flex">
+<span class="avatar avatar-sm flex-shrink-0">
+<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient2.jpg">
+ </span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">الوین بویکین</span> مبلغ 210 تومان پرداخت کرد <span class="noti-title">نوبت</span></p>
+<p class="noti-time"><span class="notification-time">8 دقیقه قبل</span></p>
+</div>
+</div>
+</a>
+</li>
+<li class="notification-message">
+<a href="#">
+<div class="media d-flex">
+<span class="avatar avatar-sm flex-shrink-0">
+<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient3.jpg">
+</span>
+<div class="media-body flex-grow-1">
+<p class="noti-details"><span class="noti-title">نیکلاس هیج</span> یک پیام ارسال کرد <span class="noti-title">به پزشک خود</span></p>
+<p class="noti-time"><span class="notification-time">12 دقیقه قبل</span></p>
+</div>
+</div>
+</a>
+</li>
+</ul>
+</div>
+<div class="topnav-dropdown-footer">
+<a href="#">مشاهده اطلاعیه ها</a>
+</div>
+</div>
+</li>
+
+
+<li class="nav-item dropdown has-arrow">
+<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="31" alt="Donald Niles"></span>
+</a>
+<div class="dropdown-menu">
+<div class="user-header">
+<div class="avatar avatar-sm">
+<img src="assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+</div>
+<div class="user-text">
+<h6>دانلد نیلز</h6>
+<p class="text-muted mb-0">ادمین</p>
+</div>
+</div>
+<a class="dropdown-item" href="profile.html">پروفایل من</a>
+<a class="dropdown-item" href="settings.html">تنظیمات</a>
+<a class="dropdown-item" href="login.html">خروج</a>
+</div>
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="sidebar" id="sidebar">
+<div class="sidebar-inner slimscroll">
+<div id="sidebar-menu" class="sidebar-menu">
+<ul>
+<li class="menu-title">
+<span>اصلی</span>
+</li>
+<li>
+<a href="index.html"><i class="fe fe-home"></i> <span>داشبرد</span></a>
+</li>
+<li>
+<a href="appointment-list.html"><i class="fe fe-layout"></i> <span>نوبت‌دهی</span></a>
+</li>
+<li>
+<a href="specialities.html"><i class="fe fe-users"></i> <span>تخصص</span></a>
+</li>
+<li>
+<a href="doctor-list.html"><i class="fe fe-user-plus"></i> <span>پزشکان</span></a>
+</li>
+<li>
+<a href="patient-list.html"><i class="fe fe-user"></i> <span>مراجعه‌کنندگان</span></a>
+</li>
+<li>
+<a href="reviews.html"><i class="fe fe-star-o"></i> <span>نظرات</span></a>
+</li>
+<li class="active">
+<a href="transactions-list.html"><i class="fe fe-activity"></i> <span>تراکنش‌ها</span></a>
+</li>
+<li>
+<a href="settings.html"><i class="fe fe-vector"></i> <span>تنظیمات</span></a>
+</li>
+<li class="submenu">
+<a href="#"><i class="fe fe-document"></i> <span>گزارشات</span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li><a href="invoice-report.html">گزارشات فاکتور</a></li>
+</ul>
+</li>
+<li class="menu-title">
+<span>صفحات</span>
+</li>
+<li>
+<a href="profile.html"><i class="fe fe-user-plus"></i> <span>پروفایل</span></a>
+</li>
+<li class="submenu">
+<a href="#"><i class="fe fe-document"></i> <span>احراز هویت</span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li><a href="login.html"> ورود </a></li>
+<li><a href="register.html"> ثبت‌نام</a></li>
+<li><a href="forgot-password.html"> فراموشی رمز عبور </a></li>
+<li><a href="lock-screen.html"> قفل صفحه </a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="#"><i class="fe fe-warning"></i> <span> صفحات خطا </span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li><a href="error-404.html">404 خطا </a></li>
+<li><a href="error-500.html">500 خطا </a></li>
+</ul>
+</li>
+<li>
+<a href="blank-page.html"><i class="fe fe-file"></i> <span>صفحه خالی</span></a>
+</li>
+<li class="menu-title">
+<span>رابط کاربری</span>
+</li>
+<li>
+<a href="components.html"><i class="fe fe-vector"></i> <span>‌کامپوننت‌ها</span></a>
+</li>
+<li class="submenu">
+<a href="#"><i class="fe fe-layout"></i> <span>فرم‌ها</span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li><a href="form-basic-inputs.html">ورودی پایه</a></li>
+<li><a href="form-input-groups.html">ورودی گروهی</a></li>
+<li><a href="form-horizontal.html">فرم افقی</a></li>
+<li><a href="form-vertical.html">فرم عمودی</a></li>
+<li><a href="form-mask.html"> ماسک فرم </a></li>
+<li><a href="form-validation.html">اعتبارسنجی فرم </a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="#"><i class="fe fe-table"></i> <span>جدول ها</span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li><a href="tables-basic.html">جدول پایه</a></li>
+<li><a href="data-tables.html">جدول داده</a></li>
+</ul>
+</li>
+<li class="submenu">
+<a href="javascript:void(0);"><i class="fe fe-code"></i> <span>چند لایه</span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li class="submenu">
+<a href="javascript:void(0);"> <span>لایه 1</span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li><a href="javascript:void(0);"><span>لایه 2</span></a></li>
+<li class="submenu">
+<a href="javascript:void(0);"> <span>لایه 2</span> <span class="menu-arrow"></span></a>
+<ul style="display: none;">
+<li><a href="javascript:void(0);">لایه 3</a></li>
+<li><a href="javascript:void(0);">لایه 3</a></li>
+</ul>
+</li>
+<li><a href="javascript:void(0);"> <span>لایه 2</span></a></li>
+</ul>
+</li>
+<li>
+<a href="javascript:void(0);"> <span>لایه 1</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="page-wrapper">
+<div class="content container-fluid">
+
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+<h3 class="page-title">تراکنش‌ها</h3>
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">داشبرد</a></li>
+<li class="breadcrumb-item active">تراکنش‌ها</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-12">
+<div class="card">
+<div class="card-body">
+<div class="table-responsive">
+<table class="datatable table table-hover table-center mb-0">
+<thead>
+<tr>
+<th>شماره فاکتور </th>
+<th>شناسه مراجعه کننده</th>
+<th>نام بیمار</th>
+<th>نام مراجعه کننده</th>
+<th class="text-center">وضعیت</th>
+<th class="text-end"> اقدامات </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="invoice.html">#IN0001</td>
+<td>#PT001</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
+<a href="profile.html">مگان برد</a>
+</h2>
+</td>
+<td>10000 تومان </td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0002</td>
+<td>#PT002</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient2.jpg" alt="User Image"></a>
+<a href="profile.html">آلوین بوکسن </a>
+</h2>
+</td>
+<td>200 تومان</td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0003</td>
+<td>#PT003</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient3.jpg" alt="User Image"></a>
+<a href="profile.html">نیکلاس هیج</a>
+</h2>
+</td>
+<td>250 تومان</td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0004</td>
+<td>#PT004</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient4.jpg" alt="User Image"></a>
+<a href="profile.html">شری مک کورتنی</a>
+</h2>
+</td>
+<td>150 تومان</td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0005</td>
+<td>#PT005</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient5.jpg" alt="User Image"></a>
+<a href="profile.html">راجر لوید</a>
+</h2>
+</td>
+<td> 350000 تومان </td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0006</td>
+<td>#PT006</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient6.jpg" alt="User Image"></a>
+<a href="profile.html">فرانسیس گیورد</a>
+</h2>
+</td>
+<td>300 تومان</td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0007</td>
+<td>#PT007</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient7.jpg" alt="User Image"></a>
+<a href="profile.html">کیت ماسون</a>
+</h2>
+</td>
+<td>250 تومان</td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0008</td>
+<td>#PT008</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient8.jpg" alt="User Image"></a>
+<a href="profile.html">گلن جانسون</a>
+</h2>
+</td>
+<td>150 تومان</td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0009</td>
+<td>#PT009</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient9.jpg" alt="User Image"></a>
+<a href="profile.html">مانتی اسمیت</a>
+</h2>
+</td>
+<td>10000 تومان </td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+ </div>
+</td>
+</tr>
+<tr>
+<td><a href="invoice.html">#IN0010</td>
+<td>#PT010</td>
+<td>
+<h2 class="table-avatar">
+<a href="profile.html" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient10.jpg" alt="User Image"></a>
+<a href="profile.html">لاری بارنز</a>
+</h2>
+</td>
+<td>120 تومان</td>
+<td class="text-center">
+<span class="badge rounded-pill bg-success inv-badge">پرداخت شده</span>
+</td>
+<td class="text-end">
+<div class="actions">
+<a class="btn btn-sm bg-danger-light" data-bs-toggle="modal" href="#delete_modal">
+<i class="fe fe-trash"></i> حذف
+</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="modal fade" id="delete_modal" aria-hidden="true" role="dialog">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<div class="form-content p-2">
+<h4 class="modal-title">حذف</h4>
+<p class="mb-4">آیا مطمئن هستید که می خواهید حذف کنید؟</p>
+<button type="button" class="btn btn-primary">ذخیره </button>
+<button type="button" class="btn btn-danger" data-bs-dismiss="modal">بستن</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<script src="assets/js/jquery-3.6.0.min.js" type="bccb2d6df5c27e27a30b6487-text/javascript"></script>
+
+<script src="assets/js/bootstrap.bundle.min.js" type="bccb2d6df5c27e27a30b6487-text/javascript"></script>
+
+<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js" type="bccb2d6df5c27e27a30b6487-text/javascript"></script>
+
+<script src="assets/plugins/datatables/jquery.dataTables.min.js" type="bccb2d6df5c27e27a30b6487-text/javascript"></script>
+<script src="assets/plugins/datatables/datatables.min.js" type="bccb2d6df5c27e27a30b6487-text/javascript"></script>
+
+<script src="assets/js/script.js" type="bccb2d6df5c27e27a30b6487-text/javascript"></script>
+<script src="../../assets/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bccb2d6df5c27e27a30b6487-|49" defer=""></script></body>
+</html>
