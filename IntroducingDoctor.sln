@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Domain.Test.Unit", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Application.Test.Unit", "Tests\Doctor.Application.Test.Unit\Doctor.Application.Test.Unit.csproj", "{AC57D243-6828-4D36-A1D4-7A73CDB118FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor.Query.Test.Unit", "Tests\Doctor.Query.Test.Unit\Doctor.Query.Test.Unit.csproj", "{537761E2-E37B-4A03-B1AE-F5A78F7B047A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Query.Test.Unit", "Tests\Doctor.Query.Test.Unit\Doctor.Query.Test.Unit.csproj", "{537761E2-E37B-4A03-B1AE-F5A78F7B047A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor.Api.Test.Unit", "Tests\Doctor.Api.Test.Unit\Doctor.Api.Test.Unit.csproj", "{768AB146-4EFD-4308-A3EC-CFE602DB4511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Api.Test.Unit", "Tests\Doctor.Api.Test.Unit\Doctor.Api.Test.Unit.csproj", "{768AB146-4EFD-4308-A3EC-CFE602DB4511}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTempOfficeDoctor1", "..\BlazorTempDoctor\BlazorTempOfficeDoctor1\BlazorTempOfficeDoctor1.csproj", "{DC50B03E-B31F-4A54-A213-28C712B3BED9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +115,10 @@ Global
 		{768AB146-4EFD-4308-A3EC-CFE602DB4511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{768AB146-4EFD-4308-A3EC-CFE602DB4511}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{768AB146-4EFD-4308-A3EC-CFE602DB4511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC50B03E-B31F-4A54-A213-28C712B3BED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC50B03E-B31F-4A54-A213-28C712B3BED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC50B03E-B31F-4A54-A213-28C712B3BED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC50B03E-B31F-4A54-A213-28C712B3BED9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -135,6 +141,7 @@ Global
 		{AC57D243-6828-4D36-A1D4-7A73CDB118FE} = {6562AC5C-4ABD-4F6A-B1AA-5BA14D02AC24}
 		{537761E2-E37B-4A03-B1AE-F5A78F7B047A} = {6562AC5C-4ABD-4F6A-B1AA-5BA14D02AC24}
 		{768AB146-4EFD-4308-A3EC-CFE602DB4511} = {6562AC5C-4ABD-4F6A-B1AA-5BA14D02AC24}
+		{DC50B03E-B31F-4A54-A213-28C712B3BED9} = {3BC3375D-08EE-4E42-8911-4B2789DFF9B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {400C0A63-4DEC-46A8-943D-4E72092792B7}

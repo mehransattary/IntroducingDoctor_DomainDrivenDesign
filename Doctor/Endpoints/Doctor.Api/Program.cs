@@ -30,7 +30,7 @@ builder.Services.AddControllers()
     });
 builder.Services.AddDistributedRedisCache(option =>
 {
-    option.Configuration = "localhost:6379";
+    option.Configuration = "localhost:5171";
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>

@@ -1,5 +1,6 @@
 ﻿using Common.Application;
 using Common.Application.SecurityUtil;
+using Common.ChachHelper;
 using Doctor.Application.UserAgg.AddToken;
 using Doctor.Application.UserAgg.ChangePassword;
 using Doctor.Application.UserAgg.Create;
@@ -46,32 +47,31 @@ internal class UserFacade : IUserFacade
         if (result.Status != OperationResultStatus.Success)
             return OperationResult.Error();
 
-       // await _cache.RemoveAsync(CacheKeys.UserToken(result.Data));
+        await _cache.RemoveAsync(CacheKeys.UserToken(result.Data));
         return OperationResult.Success();
     }
 
     public async Task<OperationResult> ChangePassword(ChangeUserPasswordCommand command)
     {
-       // await _cache.RemoveAsync(CacheKeys.User(command.UserId));
+        await _cache.RemoveAsync(CacheKeys.User(command.UserId));
         return await _mediator.Send(command);
     }
 
     public async Task<OperationResult> EditUser(EditUserCommand command)
     {
         var result = await _mediator.Send(command);
-       // if (result.Status == OperationResultStatus.Success)
-          //  await _cache.RemoveAsync(CacheKeys.User(command.UserId));
+        if (result.Status == OperationResultStatus.Success)
+            await _cache.RemoveAsync(CacheKeys.User(command.UserId));
         return result;
     }
 
     public async Task<UserDto?> GetUserById(long userId)
     {
-        //return await _cache.GetOrSet(CacheKeys.User(userId), () =>
-        //{
-        //    return _mediator.Send(new GetUserByIdQuery(userId));
-        //});
+        return await _cache.GetOrSet(CacheKeys.User(userId), () =>
+        {
+            return _mediator.Send(new GetUserByIdQuery(userId));
+        });
 
-        return await _mediator.Send(new GetUserByIdQuery(userId));
 
     }
 
@@ -84,12 +84,11 @@ internal class UserFacade : IUserFacade
     public async Task<UserTokenDto?> GetUserTokenByJwtToken(string jwtToken)
     {
         var hashJwtToken = Sha256Hasher.Hash(jwtToken);
-        //return await _cache.GetOrSet(CacheKeys.UserToken(hashJwtToken), () =>
-        //{
-        //    return _mediator.Send(new GetUserTokenByJwtTokenQuery(hashJwtToken));
-        //});
+        return await _cache.GetOrSet(CacheKeys.UserToken(hashJwtToken), () =>
+        {
+            return _mediator.Send(new GetUserTokenByJwtTokenQuery(hashJwtToken));
+        });
 
-        return await _mediator.Send(new GetUserTokenByJwtTokenQuery(hashJwtToken));
 
     }
 
