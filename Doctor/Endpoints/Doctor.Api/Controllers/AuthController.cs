@@ -59,6 +59,7 @@ public class AuthController : ApiController
         var result = await _userFacade.RegisterUser(command);
         return CommandResult(result);
     }
+
     [HttpPost("RefreshToken")]
     public async Task<ApiResult<LoginResultDto?>> RefreshToken(string refreshToken)
     {

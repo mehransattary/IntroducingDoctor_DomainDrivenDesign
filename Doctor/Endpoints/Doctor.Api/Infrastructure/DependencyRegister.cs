@@ -13,7 +13,7 @@ public static class DependencyRegister
 
         service.AddCors(options =>
         {
-            options.AddPolicy(name: "ShopApi",
+            options.AddPolicy(name: "DoctorApi",
                 builder =>
                 {
                     builder.AllowAnyOrigin()

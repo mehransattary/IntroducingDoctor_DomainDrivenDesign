@@ -1,5 +1,6 @@
 ﻿@page "/"
-
+@using Doctor.BlazorWasm.Ui.Services.Auth;
+@inject IAuthService _authService;
 
 <PageTitle>صفحه اصلی</PageTitle>
 
@@ -20,3 +21,13 @@
         </div>
     </div>
 </section>
+@code{
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await _authService.Login(new Models.Command.Auth.LoginCommand()
+        {
+                Password="123456789",
+                PhoneNumber = "09369944780"
+        });
+    }
+}

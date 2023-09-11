@@ -1,5 +1,9 @@
-﻿namespace Doctor.BlazorWasm.Ui.Services.AboutUs;
+﻿
+
+namespace Doctor.BlazorWasm.Ui.Services.AboutUs;
 
 public interface IAboutUsService
 {
+
+
 }
